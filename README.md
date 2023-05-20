@@ -19,10 +19,10 @@ Now make a file in our current directory named `server.js`. Inside that file, pu
 console.log("Hello, World!")
 ```
 
-Now you should be able to run the following command in your terminal and get the accompanying response: 
+After saving your changes, you should be able to run the following command in your terminal and get the accompanying response: 
 ```bash
-$ node server.js
-Hello, World!
+node server.js
+# Hello, World!
 ```
 
 Once you have that displaying in your terminal, you are ready to create your first web server!
@@ -48,6 +48,16 @@ app.listen(port, () => {
 });
 ```
 
-After saving your changes, run `node server.js` again. If you get `Server is running on port 3000!`, then congrats! You've correctly set up your first web server. Next will be making it do something. 
+After saving your changes, run `node server.js` again. If you get `Server is running on port http://localhost:3000`, then congrats! You've correctly set up your first web server. Next will be making it do something. Use `Ctrl-C` to kill the server in your teminal. 
 
-## Understanding what we just did
+## Making It Do Something
+In order to make our server do something, we will need to add some routes for it to listen to. Let's follow that link our terminal gave us, by going to [http://localhost:3000](http://localhost:3000) in our browser. You should see `Cannot GET /`. That is because we haven't set up any routes yet! So we'll make the `'/'` route (which is the default or home route) first,
+
+Add the following to your code under the last `app.use()`:
+```js
+app.get("/", (req, res) => {
+  res.send({ msg: "Hello, World!" });
+});
+```
+
+Now if you kill your server in the terminal and run `node server.js` again, when you refresh your webpage you should see something like `{"msg":"Hello, World!"}`. This means that you've successfully set up your first route! Let's try adding a few more. 
