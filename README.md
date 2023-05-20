@@ -34,13 +34,20 @@ Express is the package we'll be using to turn our Node program into an actual we
 
 Once you have Express installed, paste the following code inside of `server.js` (replacing the `console.log`):
 ```js
-const express = require('express');
-const app = express();
-const port = 3000;
+const express = require('express'); // import express
+const app = express(); // declare our app variable
+const port = 3000; // declare our port variable
 
+// these make handling our data requests easier
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
+
+// This actually starts the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}!`);
 });
 ```
 
 After saving your changes, run `node server.js` again. If you get `Server is running on port 3000!`, then congrats! You've correctly set up your first web server. Next will be making it do something. 
+
+## Understanding what we just did
