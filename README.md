@@ -60,4 +60,4 @@ app.get("/", (req, res) => {
 });
 ```
 
-Now if you kill your server in the terminal and run `node server.js` again, when you refresh your webpage you should see something like `{"msg":"Hello, World!"}`. This means that you've successfully set up your first route! Let's try adding a few more. 
+Now if you kill your server in the terminal and run `node server.js` again, when you refresh your webpage you should see something like `{"msg":"Hello, World!"}`. This means that you've successfully set up your first route! 
