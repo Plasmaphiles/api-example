@@ -1,7 +1,4 @@
-# api-example
-An example API for use in the game Plasma
-
-# How to
+# Plasma Web Server Tutorial
 ## Getting started
 We're going to set up a simple web server using Node.js and Express. 
 
